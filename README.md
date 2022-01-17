@@ -6,5 +6,5 @@ Example tweet:
 
 
 # Getting started
-$ docker-compose up
+$ docker-compose up <br />
 $ node src/main
