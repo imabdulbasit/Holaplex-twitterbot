@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:14.1
+    container_name: twitter-bot.db
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5337:5432"
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
+      - ./src/db/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
